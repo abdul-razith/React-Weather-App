@@ -1,0 +1,31 @@
+.container{
+    padding: 10px 20px 10px 20px;
+    
+    display: flex;
+    justify-content: space-between;
+}
+
+aside{
+    width: 20%;
+    row-gap: 20px;
+    background-color: blue;
+    display: flex;
+    flex-direction: column;
+}
+
+aside .wrap{
+    width: 100%;
+    height: 300px;
+}
+
+aside .forecast{
+    background-color: antiquewhite;
+}
+
+main{
+    width: 75%;
+    display: flex;
+    row-gap: 10px;
+    flex-direction: column;
+    justify-content: space-between;
+}
