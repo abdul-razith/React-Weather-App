@@ -14,7 +14,6 @@ export const Highlights = ({ coord, highlightsProps }) => {
     useEffect(() => {
         const getData = async () => {
             const resp = await axios.get(url);
-            console.log(resp.data);
             setAir(resp.data);
         }
         getData();
