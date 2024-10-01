@@ -40,8 +40,6 @@ export const Highlights = ({ coord, highlightsProps }) => {
         5 : '#A020F0',
     }
 
-    console.log("local guy");
-
     const btnColor = air_quality_color[air.list[0].main.aqi];
 
     //Time formate
