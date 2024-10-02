@@ -3,18 +3,25 @@ import axios from 'axios';
 import './home.css'
 import { Navbar } from '../../components/Navbar/Navbar'
 import { Current } from '../../components/Current/Current'
-import { Forecast } from '../../components/Forecast/Forecast'
 import { Highlights } from '../../components/Highlights/Highlights'
-import { Hourforecast } from '../../components/Hourforecast/Hourforecast'
+import { Dayforecast } from '../../components/Dayforecast/Dayforecast'
+import { Hourforecast } from '../../components/Hourforecast/Hourforecast';
 
 export const Home = () => {
   const [city, setCity] = useState("chennai");
   const [currentData, setCurrentData] = useState(null);
+  const [forecastData, setForecastData] = useState(null);
   const [coord, setCoord] = useState({lat:0, lon:0})
 
+  // Current weather API url.
   const api_key = "574fc30154820aebf9db01cd4a1bfa93";
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=Metric`;
+
+  // Forecast waether API url.
+  //const urls = `https://api.openweathermap.org/data/2.5/forecast?q=chennai&appid=574fc30154820aebf9db01cd4a1bfa93&units=Metric`
+  const forecast_url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}&units=Metric`;
   
+  // For current data.
   useEffect(() => {
     const getData = async () => {
       const resp = await axios.get(url);
@@ -27,7 +34,21 @@ export const Home = () => {
     getData();
   }, [url]);
 
-  if (!currentData) {
+  
+  // For forecast data.
+  useEffect(()=>{
+    const getData = async () => {
+      const resp = await axios.get(forecast_url);
+      setForecastData(resp.data);
+      //console.log(resp.data.list[0]);
+      console.log(forecastData);
+    }
+
+    getData();
+  }, [forecast_url]);
+
+
+  if (!currentData && !forecastData) {
     return (
       <div className='current'>
         Search the city
@@ -55,7 +76,7 @@ export const Home = () => {
           </>
 
           <>
-            <Forecast city={city}/>
+            <Dayforecast city={city}/>
           </>
         </aside>
         <main>
