@@ -23,32 +23,39 @@ export const Home = () => {
   
   // For current data.
   useEffect(() => {
-    const getData = async () => {
-      const resp = await axios.get(url);
-      setCurrentData(resp.data);
+    // First function for current api
+    const getData1 = async () => {
+      const current_resp = await axios.get(url);
+      setCurrentData(current_resp.data);
       setCoord({
-        lat : resp.data.coord.lat,
-        lon : resp.data.coord.lon,
+        lat : current_resp.data.coord.lat,
+        lon : current_resp.data.coord.lon,
       });
     }
-    getData();
-  }, [url]);
+
+    // Second function for forecast api
+    const getData2 = async () => {
+      const forecast_resp = await axios.get(forecast_url);
+      setForecastData(forecast_resp.data);
+    }
+    getData1();
+    getData2();
+  }, [url, forecast_url]);
 
   
   // For forecast data.
-  useEffect(()=>{
+  /* useEffect(()=>{
     const getData = async () => {
       const resp = await axios.get(forecast_url);
       setForecastData(resp.data);
-      //console.log(resp.data.list[0]);
+      console.log(resp.data.list[0]);
       console.log(forecastData);
     }
-
     getData();
-  }, [forecast_url]);
+  }, [forecast_url]); */
 
 
-  if (!currentData && !forecastData) {
+  if (!currentData || !forecastData) {
     return (
       <div className='current'>
         Search the city
@@ -76,12 +83,12 @@ export const Home = () => {
           </>
 
           <>
-            <Dayforecast city={city}/>
+            <Dayforecast forecastData={forecastData}/>
           </>
         </aside>
         <main>
           <Highlights coord={coord} highlightsProps={highlightsProps}/>
-          <Hourforecast />
+          <Hourforecast forecastData={forecastData} />
         </main>
       </div>
     </>
