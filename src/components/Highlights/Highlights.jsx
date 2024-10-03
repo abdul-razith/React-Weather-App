@@ -146,7 +146,7 @@ export const Highlights = ({ coord, highlightsProps }) => {
                             <h4>Feels Like</h4>
                             <div className="feels-like-data">
                                 <WiThermometer size={50} />
-                                <p>{highlightsProps.feels_like} °C</p>
+                                <p>{parseFloat(highlightsProps.feels_like).toFixed(1)} °C</p>
                             </div>
                         </div>
                     </div>
