@@ -1,16 +1,15 @@
 .container{
     padding: 10px 20px 10px 20px;
-    
     display: flex;
     justify-content: space-between;
 }
 
 aside{
-    width: 20%;
-    row-gap: 20px;
-    background-color: blue;
+    width: 22%;
+    /* row-gap: 20px; */
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
 }
 
 aside .wrap{

@@ -42,19 +42,6 @@ export const Home = () => {
     getData2();
   }, [url, forecast_url]);
 
-  
-  // For forecast data.
-  /* useEffect(()=>{
-    const getData = async () => {
-      const resp = await axios.get(forecast_url);
-      setForecastData(resp.data);
-      console.log(resp.data.list[0]);
-      console.log(forecastData);
-    }
-    getData();
-  }, [forecast_url]); */
-
-
   if (!currentData || !forecastData) {
     return (
       <div className='current'>

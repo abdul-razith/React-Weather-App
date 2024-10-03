@@ -1,6 +1,7 @@
 .dayforecast{
     width: 100%;
-    height: 350px;
+    /* height: 350px; */
+    height: 54%;
     border-radius: 25px;
     background-color: gray;
     padding: 20px;
@@ -19,4 +20,13 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
+    width: 45%;
+}
+
+.dayforecast .row .date{
+    width: 20%;
+}
+
+.dayforecast .row .week{
+    width: 20%;
 }
