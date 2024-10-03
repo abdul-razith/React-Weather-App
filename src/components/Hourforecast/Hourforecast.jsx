@@ -24,7 +24,7 @@ export const Hourforecast = ({ forecastData }) => {
               }).toUpperCase();
               
               return (
-                <div className='box'>
+                <div className='box' key={index}>
                   <h5>{time}</h5>
                   <img src={weather_icons[ele.weather[0].icon]} alt="" width={74} height={74}/>
                   <p>{ele.weather[0].main}</p>

@@ -64,11 +64,21 @@ export const Dayforecast = ({ forecastData }) => {
         }
         final_collect.push(objs)
         found = true
+        console.log(date_collect[j]) // For testing
+        
         break
       }
     }
     if (!found) {
-      final_collect.push(date_collect[date_collect.length - 1])
+      let objs = {
+        icon : date_collect[date_collect.length - 1].weather[0].icon,
+        temp : date_collect[date_collect.length - 1].main.temp,
+        date : tomorrow_date_obj.getDate(),
+        month : tomorrow_date_obj.toLocaleString('en-US', { month: 'short' }),
+        week : tomorrow_date_obj.toLocaleString('en-US', { weekday: 'long' }),
+      }
+      final_collect.push(objs)
+      console.log(date_collect[date_collect.length - 1]) // For testing
     }
   }
 
@@ -76,9 +86,9 @@ export const Dayforecast = ({ forecastData }) => {
     <div className='dayforecast'>
       <h3 className='title'>5 Day Forecast</h3>
       {
-        final_collect.map((ele) => {
+        final_collect.map((ele, index) => {
           return (
-            <div className="row">
+            <div className="row" key={index}>
               <div className="icon">
                 <img src={weather_icons[ele.icon]} alt="" width={54} height={54} />
                 <p>{parseFloat(ele.temp).toFixed(1)} °C</p>
