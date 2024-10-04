@@ -20,7 +20,7 @@ export const Navbar = ({setCity}) => {
             </div>
             <div className="search-bar">
                 <FiSearch className='icon-search' />
-                <input type="text" placeholder='Search City' onKeyDown={(e)=>searchCity(e)}/>
+                <input type="text" placeholder='Search City....' onKeyDown={(e)=>searchCity(e)}/>
             </div>
             <div className="location-btn">
                 <FiMapPin />

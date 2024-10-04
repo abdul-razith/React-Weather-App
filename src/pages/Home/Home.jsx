@@ -78,7 +78,6 @@ export const Home = () => {
       <div className="container">
         <aside>
           <>
-            {/* <Current city={city} setCoord={setCoord} /> */}
             <Current currentData={currentData} />
           </>
 

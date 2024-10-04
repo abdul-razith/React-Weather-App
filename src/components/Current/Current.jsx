@@ -25,7 +25,7 @@ export const Current = ({currentData}) => {
 
   return (
     <div className='current'>
-      <h3>Now</h3>
+      <h3 className='current-title'>Now</h3>
       <div className='unit'>
         <div className="temp">
           <h1>{parseFloat(currentData.main.temp).toFixed(1)}</h1>
