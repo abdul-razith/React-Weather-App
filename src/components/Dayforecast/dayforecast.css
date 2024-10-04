@@ -10,6 +10,7 @@
     justify-content: space-between;
 }
 .dayforecast h3{
+    width: fit-content;
     font-family: var(--font-heading);
 }
 .dayforecast .row{
