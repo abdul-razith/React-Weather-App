@@ -9,7 +9,9 @@
     flex-direction: column;
     justify-content: space-between;
 }
-
+.dayforecast h3{
+    font-family: var(--font-heading);
+}
 .dayforecast .row{
     display: flex;
     align-items: center;
@@ -19,8 +21,15 @@
 .dayforecast .row .icon{
     display: flex;
     align-items: center;
-    column-gap: 10px;
-    width: 45%;
+    column-gap: 7px;
+    width: 25%;
+}
+
+.dayforecast .row .temp{
+    width: 25%;
+}
+.dayforecast .row .temp p{
+    font-family: var(--font-subheading);
 }
 
 .dayforecast .row .date{
@@ -28,5 +37,10 @@
 }
 
 .dayforecast .row .week{
-    width: 20%;
+    width: 15%;
+}
+
+.dayforecast .row .date p,
+.dayforecast .row .week p{
+    font-family: var(--font-body);
 }

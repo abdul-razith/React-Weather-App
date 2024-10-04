@@ -1,7 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+:root {
+  --font-heading: 'JetBrains Mono', monospace; /* For headings */
+  --font-subheading: 'Fira Code', monospace; /* For sub-headings */
+  --font-body: 'Source Code Pro', monospace; /* For body text */
 }
 
 .root{

@@ -4,24 +4,7 @@ import { FiWind, FiSunrise, FiSunset, FiEye } from "react-icons/fi";
 import { WiHumidity, WiWindy, WiThermometer } from "react-icons/wi";
 import './highlights.css'
 
-export const Highlights = ({ coord, highlightsProps }) => {
-    const [air, setAir] = useState();
-    let lat = coord.lat;
-    let lon = coord.lon;
-    const api_key = "574fc30154820aebf9db01cd4a1bfa93";
-    const url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${lat}&lon=${lon}&appid=${api_key}`;
-
-    useEffect(() => {
-        const getData = async () => {
-            const resp = await axios.get(url);
-            setAir(resp.data);
-        }
-        getData();
-    }, [url]);
-
-    if (!air) {
-        return (<>Loading</>);
-    }
+export const Highlights = ({ airData, highlightsProps }) => {
 
     const air_quality = {
         1: 'Good',
@@ -39,7 +22,7 @@ export const Highlights = ({ coord, highlightsProps }) => {
         5 : '#A020F0',
     }
 
-    const btnColor = air_quality_color[air.list[0].main.aqi];
+    const btnColor = air_quality_color[airData.list[0].main.aqi];
 
     //Time formate
 
@@ -66,25 +49,25 @@ export const Highlights = ({ coord, highlightsProps }) => {
                     <div className="air-quality">
                         <div className="aqi">
                             <h3>Air quality index</h3>
-                            <button style={{backgroundColor: btnColor}}>{air_quality[air.list[0].main.aqi]}</button>
+                            <button style={{backgroundColor: btnColor}}>{air_quality[airData.list[0].main.aqi]}</button>
                         </div>
                         <div className="gas">
                             <FiWind size={50} />
                             <div className='gas-value'>
                                 <h4>PM2.5</h4>
-                                <p>{air.list[0].components.pm2_5}</p>
+                                <p>{airData.list[0].components.pm2_5}</p>
                             </div>
                             <div className='gas-value'>
                                 <h4>SO2</h4>
-                                <p>{air.list[0].components.so2}</p>
+                                <p>{airData.list[0].components.so2}</p>
                             </div>
                             <div className='gas-value'>
                                 <h4>NO2</h4>
-                                <p>{air.list[0].components.no2}</p>
+                                <p>{airData.list[0].components.no2}</p>
                             </div>
                             <div className='gas-value'>
                                 <h4>O3</h4>
-                                <p>{air.list[0].components.o3}</p>
+                                <p>{airData.list[0].components.o3}</p>
                             </div>
                         </div>
                     </div>
@@ -119,14 +102,14 @@ export const Highlights = ({ coord, highlightsProps }) => {
                 <div className="bottom">
                     <div className="left">
                         <div className="humidity">
-                            <h4>Humidity</h4>
+                            <h3>Humidity</h3>
                             <div className="humidity-data">
                                 <WiHumidity size={50} />
                                 <p>{highlightsProps.humidity} %</p>
                             </div>
                         </div>
                         <div className="pressure">
-                            <h4>Pressure</h4>
+                            <h3>Pressure</h3>
                             <div className="pressure-data">
                                 <WiWindy size={50} />
                                 <p>{highlightsProps.pressure} hPa</p>
@@ -136,17 +119,17 @@ export const Highlights = ({ coord, highlightsProps }) => {
 
                     <div className="right">
                         <div className="visibility">
-                            <h4>Visibility</h4>
+                            <h3>Visibility</h3>
                             <div className="visibility-data">
                                 <FiEye size={50} />
                                 <p>{highlightsProps.visibility} m</p>
                             </div>
                         </div>
                         <div className="feels-like">
-                            <h4>Feels Like</h4>
+                            <h3>Feels Like</h3>
                             <div className="feels-like-data">
                                 <WiThermometer size={50} />
-                                <p>{parseFloat(highlightsProps.feels_like).toFixed(1)} °C</p>
+                                <p>{parseFloat(highlightsProps.feels_like).toFixed(1)}°C</p>
                             </div>
                         </div>
                     </div>

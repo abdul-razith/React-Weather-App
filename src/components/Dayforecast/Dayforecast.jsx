@@ -60,7 +60,7 @@ export const Dayforecast = ({ forecastData }) => {
           temp : date_collect[j].main.temp,
           date : tomorrow_date_obj.getDate(),
           month : tomorrow_date_obj.toLocaleString('en-US', { month: 'short' }),
-          week : tomorrow_date_obj.toLocaleString('en-US', { weekday: 'long' }),
+          week : tomorrow_date_obj.toLocaleString('en-US', { weekday: 'short' }),
         }
         final_collect.push(objs)
         found = true
@@ -75,7 +75,7 @@ export const Dayforecast = ({ forecastData }) => {
         temp : date_collect[date_collect.length - 1].main.temp,
         date : tomorrow_date_obj.getDate(),
         month : tomorrow_date_obj.toLocaleString('en-US', { month: 'short' }),
-        week : tomorrow_date_obj.toLocaleString('en-US', { weekday: 'long' }),
+        week : tomorrow_date_obj.toLocaleString('en-US', { weekday: 'short' }),
       }
       final_collect.push(objs)
       console.log(date_collect[date_collect.length - 1]) // For testing
@@ -90,14 +90,16 @@ export const Dayforecast = ({ forecastData }) => {
           return (
             <div className="row" key={index}>
               <div className="icon">
-                <img src={weather_icons[ele.icon]} alt="" width={54} height={54} />
-                <p>{parseFloat(ele.temp).toFixed(1)} °C</p>
+                <img src={weather_icons[ele.icon]} alt="" width={60} height={60} />
               </div>
-              <div className="date">
-                <p>{ele.date} {ele.month}</p>
+              <div className="temp">
+                <p>{parseFloat(ele.temp).toFixed(1)}°C</p>
               </div>
               <div className="week">
                 <p>{ele.week}</p>
+              </div>
+              <div className="date">
+                <p>{ele.date} {ele.month}</p>
               </div>
             </div>
           )

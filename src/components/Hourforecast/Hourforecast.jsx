@@ -28,7 +28,7 @@ export const Hourforecast = ({ forecastData }) => {
                   <h5>{time}</h5>
                   <img src={weather_icons[ele.weather[0].icon]} alt="" width={74} height={74}/>
                   <p>{ele.weather[0].main}</p>
-                  <p>{parseFloat(ele.main.temp).toFixed(1)} °C</p>
+                  <p>{parseFloat(ele.main.temp).toFixed(1)}°C</p>
                 </div>
               )
             })
