@@ -1,10 +1,12 @@
-.current{
+.current {
     width: 100%;
     /* height: 300px; */
     height: 43%;
     border-radius: 25px;
-    background-color: #414141; /* THEME 2 */
-    background-color: #352F44; /* THEME 1 */
+    background-color: #414141;
+    /* THEME 2 */
+    background-color: #352F44;
+    /* THEME 1 */
     padding: 20px;
     display: flex;
     /* row-gap: 20px; */
@@ -12,40 +14,105 @@
     justify-content: space-around;
 }
 
-.current h3{
+.current h3 {
     font-family: var(--font-heading);
 }
 
-.current .unit{
+.current .unit {
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-.current .unit .temp{
+
+.current .unit .temp {
     display: flex;
 }
-.current .unit .temp p{
+
+.current .unit .temp p {
     font-family: var(--font-subheading);
     font-size: 38px;
 }
-.current .unit .temp h1{
+
+.current .unit .temp h1 {
     font-family: var(--font-subheading);
     font-size: 45px;
 }
-.current h4{
+
+.current h4 {
     font-family: var(--font-body);
 }
-.current .unit .weather-icon{
+
+.current .unit .weather-icon {
     width: 40%;
 }
 
-.current .date-location{
+.current .date-location {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
 }
 
-.current .date-location p{
+.current .date-location p {
     font-family: var(--font-body);
     font-weight: 600;
+}
+
+
+/* Laptops and small desktop screens (1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .current {
+        width: 47%;
+        height: 350px;
+    }
+
+    .current .unit {
+        justify-content: space-around;
+    }
+
+    .current .unit .weather-icon {
+        width: 35%;
+    }
+
+    .current .date-location {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .current {
+        width: 47%;
+        height: 350px;
+    }
+
+    .current .unit {
+        justify-content: space-around;
+    }
+
+    .current .unit .weather-icon {
+        width: 35%;
+    }
+
+    .current .date-location {
+        flex-direction: column;
+    }
+}
+
+/* Mobile devices (up to 767px) */
+@media (max-width: 767px) {
+    .current {
+        height: 350px;
+    }
+
+    .current .unit .weather-icon {
+        width: 30%; /*  */
+    }
+    
+    .current .date-location {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
 }

@@ -37,3 +37,55 @@
 .hourforecast .boxes .box p{
     font-family: var(--font-body);
 }
+
+
+
+/* Laptops and small desktop screens (1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    /* NO NEED */
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .hourforecast .boxes{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        row-gap: 10px;
+        justify-content: space-between;
+    }
+    
+    .hourforecast .boxes .box{
+        width: 22%;
+        height: 240px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+}
+
+/* Mobile devices (up to 767px) */
+@media (max-width: 767px) {
+    .hourforecast .boxes{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        row-gap: 10px;
+        justify-content: space-between;
+    }
+    
+    .hourforecast .boxes .box{
+        width: 45%;
+        height: 240px;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+}

@@ -89,17 +89,17 @@ export const Dayforecast = ({ forecastData }) => {
         final_collect.map((ele, index) => {
           return (
             <div className="row" key={index}>
-              <div className="icon">
-                <img src={weather_icons[ele.icon]} alt="" width={60} height={60} />
-              </div>
-              <div className="temp">
-                <p>{parseFloat(ele.temp).toFixed(1)}°C</p>
-              </div>
               <div className="week">
                 <p>{ele.week}</p>
               </div>
               <div className="date">
                 <p>{ele.date} {ele.month}</p>
+              </div>
+              <div className="temp">
+                <p>{parseFloat(ele.temp).toFixed(1)}°C</p>
+              </div>
+              <div className="icon">
+                <img src={weather_icons[ele.icon]} alt="" width={60} height={60} />
               </div>
             </div>
           )

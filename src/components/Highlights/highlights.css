@@ -8,7 +8,9 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
 .highlights .title{
+    width: fit-content;
     padding-bottom: 10px;
     font-family: var(--font-heading);
 }
@@ -230,4 +232,238 @@
 .bottom .right .feels-like h3{
     padding-left: 20px;
     padding-top: 5px;
+}
+
+
+
+/* Laptops and small desktop screens (1025px to 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+    .top{
+        flex-direction: column;
+        row-gap: 10px;
+        flex: 1;
+    }
+    
+    .top .air-quality{
+        width: 100%;
+    }
+
+    .top .air-quality .gas{
+        justify-content: space-evenly;
+    }
+    
+    .top .sun-times{
+        width: 100%;
+    }
+    
+    .top .sun-times .rise{
+        justify-content: space-evenly;
+        width: 44%;
+    }
+     
+    .top .sun-times .set{
+        justify-content: space-evenly;
+        width: 44%;
+    }
+}
+
+/* Tablets (768px to 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .top{
+        flex-direction: column;
+        row-gap: 10px;
+        flex: 1;
+    }
+    
+    .top .air-quality{
+        width: 100%;
+    }
+
+    .top .air-quality .gas{
+        justify-content: space-evenly;
+    }
+    
+    .top .sun-times{
+        width: 100%;
+    }
+    
+    .top .sun-times .rise{
+        justify-content: space-evenly;
+        width: 44%;
+    }
+     
+    .top .sun-times .set{
+        justify-content: space-evenly;
+        width: 44%;
+    }
+
+    /* ------------------------------- */
+    
+    .bottom{
+        flex-direction: column;
+        row-gap: 10px;
+    }
+
+    
+    .bottom .left .humidity .humidity-data{
+        width: 100%;
+    }
+    
+    
+    .bottom .left .pressure .pressure-data{
+        width: 100%;
+    }
+    
+    .bottom .left,
+    .bottom .right{
+        width: 100%;
+    }
+    
+    .bottom .left{
+        justify-content: space-between;
+    }
+    
+    .bottom .left div{
+        width: 45%;
+    }
+
+    .bottom .right div{
+        width: 45%;
+    }
+    
+    .bottom .right{
+        justify-content: space-between;
+    }
+    
+    
+    .bottom .right .visibility .visibility-data{
+        width: 100%;
+    }
+
+    .bottom .right .feels-like .feels-like-data{
+        width: 100%;
+    }
+    
+}
+
+/* Mobile devices (up to 767px) */
+@media (max-width: 767px) {
+
+    .highlights{
+        justify-content: flex-start;
+        margin-bottom: 30px;
+    }
+
+
+    .top{
+        flex-direction: column;
+        row-gap: 10px;
+    }
+    
+    .top .air-quality{
+        width: 100%;
+        height: 250px;
+    }
+
+    .top .air-quality .gas{
+        flex-wrap: wrap;
+        row-gap: 30px;
+    }
+
+    .top .air-quality .gas img{
+        display: none; /* ICON DISPALY NONE IN MOBILE VERSION */
+    }
+
+    .top .air-quality .gas .gas-value{
+        width: 50%;
+    }
+    
+    .top .sun-times{
+        width: 100%;
+    }
+
+    .top .sun-times .rise-set{
+        flex-direction: column;
+        row-gap: 20px;
+    }
+    
+    .top .sun-times .rise{
+        justify-content: space-around;
+        width: 100%;
+    }
+     
+    .top .sun-times .set{
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    /* ------------------------------- */
+    
+    .bottom{
+        flex-direction: column;
+        row-gap: 0px; /*  */
+    }
+
+    .bottom .left,
+    .bottom .right{
+        width: 100%;
+    }
+
+    .bottom .left,
+    .bottom .right{
+        height: 40%;
+        flex-direction: column;
+    }
+    
+    .bottom .left .humidity{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .bottom .left .humidity .humidity-data{
+        justify-content: space-around;
+    }
+    
+    .bottom .left .pressure{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .bottom .left .pressure .pressure-data{
+        justify-content: space-around;
+    }
+    
+    
+    .bottom .left{
+        gap: 0px;
+        justify-content: space-between;
+    }
+    
+    
+    .bottom .right{
+        gap: 0px;
+        justify-content: space-between;
+    }
+
+    .bottom .right .visibility{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .bottom .right .visibility .visibility-data{
+        justify-content: space-around;
+    }
+
+    .bottom .right .feels-like{
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .bottom .right .feels-like .feels-like-data{
+        justify-content: space-around;
+    }
 }
