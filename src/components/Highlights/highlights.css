@@ -1,7 +1,8 @@
 .highlights{
     width: 100%;
     padding: 20px;
-    background-color: red;
+    background-color: #414141; /* THEME 2 */
+    background-color: #352F44; /* THEME 1 */
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -25,7 +26,8 @@
     width: 45%;
     height: 200px;
     border-radius: 25px;
-    background-color: gray;
+    background-color: #525252; /* THEME 2 */
+    background-color: #5C5470; /* THEME 1 */
 }
 
 .top .air-quality{
@@ -77,7 +79,8 @@
     width: 45%;
     height: 200px;
     border-radius: 20px;
-    background-color: gray;
+    background-color: #525252; /* THEME 2 */
+    background-color: #5C5470; /* THEME 1 */
     padding: 0 20px 0 20px;
     display: flex;
     flex-direction: column;
@@ -173,7 +176,8 @@
 .bottom .left div{
     width: 100%;
     border-radius: 20px;
-    background-color: pink;
+    background-color: #525252; /* THEME 2 */
+    background-color: #5C5470; /* THEME 1 */
 }
 
 .bottom .right{
@@ -209,7 +213,8 @@
 .bottom .right div{
     width: 100%;
     border-radius: 20px;
-    background-color: pink;
+    background-color: #525252; /* THEME 2 */
+    background-color: #5C5470; /* THEME 1 */
 }
 
 .bottom .left .humidity p,

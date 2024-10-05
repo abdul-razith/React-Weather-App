@@ -3,7 +3,8 @@
     /* height: 300px; */
     height: 43%;
     border-radius: 25px;
-    background-color: gray;
+    background-color: #414141; /* THEME 2 */
+    background-color: #352F44; /* THEME 1 */
     padding: 20px;
     display: flex;
     /* row-gap: 20px; */
