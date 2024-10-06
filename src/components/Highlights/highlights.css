@@ -139,7 +139,6 @@
 }
 
 .bottom .left .humidity{
-    /* padding: 0 20px 0 20px; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -152,7 +151,6 @@
 }
 
 .bottom .left .pressure{
-    /* padding: 0 20px 0 20px; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -182,7 +180,6 @@
 }
 
 .bottom .right .visibility{
-    /* padding: 0 20px 0 20px; */
     display: flex;
     height: 100%;
     flex-direction: column;
@@ -195,7 +192,6 @@
     align-items: center;
 }
 .bottom .right .feels-like{
-    /* padding: 0 20px 0 20px; */
     display: flex;
     flex-direction: column;
     justify-content: space-around;

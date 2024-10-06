@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from 'react'
-import axios from 'axios';
-import { FiWind, FiSunrise, FiSunset, FiEye } from "react-icons/fi";
-import { WiHumidity, WiWindy, WiThermometer } from "react-icons/wi";
+import { FiEye } from "react-icons/fi";
 import './highlights.css'
 import { weather_icons } from '../../data/images'
 
@@ -53,7 +50,6 @@ export const Highlights = ({ airData, highlightsProps }) => {
                             <button style={{ backgroundColor: btnColor }}>{air_quality[airData.list[0].main.aqi]}</button>
                         </div>
                         <div className="gas">
-                            {/* <FiWind size={50} /> */}
                             <img src={weather_icons.wind_icon} alt="" width={80} height={80} />
                             <div className='gas-value'>
                                 <h4>PM2.5</h4>
@@ -81,7 +77,6 @@ export const Highlights = ({ airData, highlightsProps }) => {
                         <div className='rise-set'>
                             <div className="rise">
                                 <div className='rise-icon'>
-                                    {/* <FiSunrise size={50} /> */}
                                     <img src={weather_icons.sunrise_icon} alt="" width={80} height={75} />
                                 </div>
                                 <div className='rise-data'>
@@ -91,7 +86,6 @@ export const Highlights = ({ airData, highlightsProps }) => {
                             </div>
                             <div className="set">
                                 <div className="set-icon">
-                                    {/* <FiSunset size={50} /> */}
                                     <img src={weather_icons.sunset_icon} alt="" width={80} height={75} />
                                 </div>
                                 <div className="set-data">
@@ -108,7 +102,6 @@ export const Highlights = ({ airData, highlightsProps }) => {
                         <div className="humidity">
                             <h3>Humidity</h3>
                             <div className="humidity-data">
-                                {/* <WiHumidity size={50} /> */}
                                 <img src={weather_icons.humidity_icon} alt="" width={80} height={70} />
                                 <p>{highlightsProps.humidity} %</p>
                             </div>
@@ -116,7 +109,6 @@ export const Highlights = ({ airData, highlightsProps }) => {
                         <div className="pressure">
                             <h3>Pressure</h3>
                             <div className="pressure-data">
-                                {/* <WiWindy size={50} /> */}
                                 {highlightsProps.pressure >= 1013 ? (
                                     // High pressure: Display high-pressure icon
                                     <>
@@ -146,7 +138,6 @@ export const Highlights = ({ airData, highlightsProps }) => {
                         <div className="feels-like">
                             <h3>Feels Like</h3>
                             <div className="feels-like-data">
-                                {/* <WiThermometer size={50} /> */}
                                 <img src={weather_icons.thermometer_celsius_icon} alt="" width={80} height={70} />
                                 <p>{parseFloat(highlightsProps.feels_like).toFixed(1)}°C</p>
                             </div>

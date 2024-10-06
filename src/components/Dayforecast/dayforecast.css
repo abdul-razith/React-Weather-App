@@ -1,12 +1,9 @@
 .dayforecast {
     width: 100%;
-    /* height: 350px; */
     height: 56%;
     border-radius: 25px;
-    background-color: #414141;
-    /* THEME 2 */
-    background-color: #352F44;
-    /* THEME 1 */
+    background-color: #414141; /* THEME 2 */
+    background-color: #352F44; /* THEME 1 */
     padding: 20px;
     display: flex;
     flex-direction: column;

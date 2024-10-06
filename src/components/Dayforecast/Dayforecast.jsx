@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import './dayforecast.css';
 import { weather_icons } from '../../data/images';
 
@@ -41,9 +40,6 @@ export const Dayforecast = ({ forecastData }) => {
     }
   })
 
-
-  // -------------
-
   for (let i = 0; i < 5; i++) {
     let found = false;
     //11:30 AM || 02:30 PM || last_index_value
@@ -64,8 +60,7 @@ export const Dayforecast = ({ forecastData }) => {
         }
         final_collect.push(objs)
         found = true
-        console.log(date_collect[j]) // For testing
-        
+        //console.log(date_collect[j]) // For testing
         break
       }
     }
@@ -78,7 +73,7 @@ export const Dayforecast = ({ forecastData }) => {
         week : tomorrow_date_obj.toLocaleString('en-US', { weekday: 'short' }),
       }
       final_collect.push(objs)
-      console.log(date_collect[date_collect.length - 1]) // For testing
+      // console.log(date_collect[date_collect.length - 1]) // For testing
     }
   }
 

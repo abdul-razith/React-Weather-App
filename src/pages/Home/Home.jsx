@@ -7,6 +7,7 @@ import { Highlights } from '../../components/Highlights/Highlights'
 import { Dayforecast } from '../../components/Dayforecast/Dayforecast'
 import { Hourforecast } from '../../components/Hourforecast/Hourforecast';
 import { Loader } from '../../components/Loader/Loader';
+import { Footer } from '../../components/Footer/Footer';
 
 export const Home = () => {
   const [city, setCity] = useState("chennai");
@@ -90,6 +91,7 @@ export const Home = () => {
           <Hourforecast forecastData={forecastData} />
         </main>
       </div>
+      <Footer />
     </>
   )
 }
