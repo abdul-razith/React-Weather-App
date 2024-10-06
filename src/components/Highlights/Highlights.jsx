@@ -54,7 +54,7 @@ export const Highlights = ({ airData, highlightsProps }) => {
                         </div>
                         <div className="gas">
                             {/* <FiWind size={50} /> */}
-                            <img src={weather_icons.wind_icon} alt="" width={50} height={50} />
+                            <img src={weather_icons.wind_icon} alt="" width={80} height={80} />
                             <div className='gas-value'>
                                 <h4>PM2.5</h4>
                                 <p>{airData.list[0].components.pm2_5}</p>
@@ -82,7 +82,7 @@ export const Highlights = ({ airData, highlightsProps }) => {
                             <div className="rise">
                                 <div className='rise-icon'>
                                     {/* <FiSunrise size={50} /> */}
-                                    <img src={weather_icons.sunrise_icon} alt="" width={50} height={50} />
+                                    <img src={weather_icons.sunrise_icon} alt="" width={80} height={75} />
                                 </div>
                                 <div className='rise-data'>
                                     <h4>Sunrise</h4>
@@ -92,7 +92,7 @@ export const Highlights = ({ airData, highlightsProps }) => {
                             <div className="set">
                                 <div className="set-icon">
                                     {/* <FiSunset size={50} /> */}
-                                    <img src={weather_icons.sunset_icon} alt="" width={50} height={50} />
+                                    <img src={weather_icons.sunset_icon} alt="" width={80} height={75} />
                                 </div>
                                 <div className="set-data">
                                     <h4>Sunset</h4>
@@ -109,7 +109,7 @@ export const Highlights = ({ airData, highlightsProps }) => {
                             <h3>Humidity</h3>
                             <div className="humidity-data">
                                 {/* <WiHumidity size={50} /> */}
-                                <img src={weather_icons.humidity_icon} alt="" width={50} height={50} />
+                                <img src={weather_icons.humidity_icon} alt="" width={80} height={70} />
                                 <p>{highlightsProps.humidity} %</p>
                             </div>
                         </div>
@@ -120,13 +120,13 @@ export const Highlights = ({ airData, highlightsProps }) => {
                                 {highlightsProps.pressure >= 1013 ? (
                                     // High pressure: Display high-pressure icon
                                     <>
-                                        <img src={weather_icons.pressure_high_icon} alt="High Pressure" width={50} height={50} />
+                                        <img src={weather_icons.pressure_high_icon} alt="High Pressure" width={80} height={70} />
                                         <p>{highlightsProps.pressure} hPa</p>
                                     </>
                                 ) : (
                                     // Low pressure: Display low-pressure icon
                                     <>
-                                        <img src={weather_icons.pressure_low_icon} alt="Low Pressure" width={50} height={50} />
+                                        <img src={weather_icons.pressure_low_icon} alt="Low Pressure" width={80} height={70} />
                                         <p>{highlightsProps.pressure} hPa</p>
                                     </>
                                 )}
@@ -139,7 +139,7 @@ export const Highlights = ({ airData, highlightsProps }) => {
                         <div className="visibility">
                             <h3>Visibility</h3>
                             <div className="visibility-data">
-                                <FiEye size={50} />
+                                <FiEye size={70} />
                                 <p>{parseInt(highlightsProps.visibility) / 1000} Km</p>
                             </div>
                         </div>
@@ -147,7 +147,7 @@ export const Highlights = ({ airData, highlightsProps }) => {
                             <h3>Feels Like</h3>
                             <div className="feels-like-data">
                                 {/* <WiThermometer size={50} /> */}
-                                <img src={weather_icons.thermometer_celsius_icon} alt="" width={50} height={50} />
+                                <img src={weather_icons.thermometer_celsius_icon} alt="" width={80} height={70} />
                                 <p>{parseFloat(highlightsProps.feels_like).toFixed(1)}°C</p>
                             </div>
                         </div>
