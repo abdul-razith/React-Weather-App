@@ -10,22 +10,35 @@ import { Loader } from '../../components/Loader/Loader';
 import { Footer } from '../../components/Footer/Footer';
 
 export const Home = () => {
+  
+  var url, forecast_url, air_url;
+
+  const [isBtnClicked, setIsBtnClicked] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
+
   const [city, setCity] = useState("chennai");
+  const [currentCoord, setCurrentCoord] = useState({ lat : 0, lon : 0}); // Get the current coord from the API, after clicking the "current location button" (current weather)
+
   const [currentData, setCurrentData] = useState(null);
   const [forecastData, setForecastData] = useState(null);
   const [airData, setAirData] = useState(null);
-  const [coord, setCoord] = useState({ lat: 0, lon: 0 })
-  const [isLoading, setIsLoading] = useState(true);
 
-  // Current weather API url.
+  const [coord, setCoord] = useState({ lat: 0, lon: 0 }) // Get the coord from the fetched url API (current air)
+
   const api_key = "574fc30154820aebf9db01cd4a1bfa93";
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=Metric`;
 
-  // Forecast waether API url.
-  const forecast_url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}&units=Metric`;
+  if(isBtnClicked){
+    url = `https://api.openweathermap.org/data/2.5/weather?lat=${currentCoord.lat}&lon=${currentCoord.lon}&appid=${api_key}&units=Metric`;
+    /* forecast_url = `https://api.openweathermap.org/data/2.5/forecast?q=${currentData.name}&appid=${api_key}&units=Metric`; */
+    forecast_url = `https://api.openweathermap.org/data/2.5/forecast?lat=${currentCoord.lat}&lon=${currentCoord.lon}&appid=${api_key}&units=Metric`;
+    air_url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${currentCoord.lat}&lon=${currentCoord.lon}&appid=${api_key}`;
+  }
+  else{
+    url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${api_key}&units=Metric`;
+    forecast_url = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${api_key}&units=Metric`;
+    air_url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${coord.lat}&lon=${coord.lon}&appid=${api_key}`;
+  }
 
-  // Air quality details (Highlights component)
-  const air_url = `http://api.openweathermap.org/data/2.5/air_pollution?lat=${coord.lat}&lon=${coord.lon}&appid=${api_key}`;
 
   // For current data.
   useEffect(() => {
@@ -75,7 +88,7 @@ export const Home = () => {
 
   return (
     <>
-      <Navbar setCity={setCity} />
+      <Navbar setCity={setCity} setIsBtnClicked={setIsBtnClicked} setCurrentCoord={setCurrentCoord} />
       <div className="container">
         <aside>
           <>
