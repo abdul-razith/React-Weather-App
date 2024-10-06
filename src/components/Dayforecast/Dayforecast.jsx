@@ -99,7 +99,7 @@ export const Dayforecast = ({ forecastData }) => {
                 <p>{parseFloat(ele.temp).toFixed(1)}°C</p>
               </div>
               <div className="icon">
-                <img src={weather_icons[ele.icon]} alt="" width={60} height={60} />
+                <img src={weather_icons[ele.icon]} alt="" />
               </div>
             </div>
           )
