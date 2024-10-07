@@ -18,6 +18,18 @@
   height: 100vh;
 }
 
+.theme-one{
+  --background: #2A2438;
+  --wraper: #352F44;
+  --boxes: #5C5470;
+}
+
+.theme-two{
+  --background: #313131;
+  --wraper: #414141;
+  --boxes: #525252;
+}
+
 p,h1,h2,h3,h4,h5,h6{
   color: white;
 }

@@ -1,8 +1,7 @@
 .highlights{
     width: 100%;
     padding: 20px;
-    background-color: #414141; /* THEME 2 */
-    background-color: #352F44; /* THEME 1 */
+    background-color: var(--wraper);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -28,8 +27,7 @@
     width: 48%;
     height: 200px;
     border-radius: 25px;
-    background-color: #525252; /* THEME 2 */
-    background-color: #5C5470; /* THEME 1 */
+    background-color: var(--boxes);
 }
 
 .top .air-quality{
@@ -81,8 +79,7 @@
     width: 48%;
     height: 200px;
     border-radius: 20px;
-    background-color: #525252; /* THEME 2 */
-    background-color: #5C5470; /* THEME 1 */
+    background-color: var(--boxes);
     padding: 0 20px 0 20px;
     display: flex;
     flex-direction: column;
@@ -175,8 +172,7 @@
 .bottom .right div{
     width: 100%;
     border-radius: 20px;
-    background-color: #525252; /* THEME 2 */
-    background-color: #5C5470; /* THEME 1 */
+    background-color: var(--boxes);
 }
 
 .bottom .right .visibility{
@@ -388,7 +384,7 @@
     
     .bottom{
         flex-direction: column;
-        row-gap: 0px; /*  */
+        row-gap: 0px;
     }
 
     .bottom .left,

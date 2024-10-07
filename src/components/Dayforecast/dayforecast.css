@@ -2,8 +2,7 @@
     width: 100%;
     height: 56%;
     border-radius: 25px;
-    background-color: #414141; /* THEME 2 */
-    background-color: #352F44; /* THEME 1 */
+    background-color: var(--wraper);
     padding: 20px;
     display: flex;
     flex-direction: column;

@@ -1,11 +1,29 @@
-import React, {useState, useEffect} from 'react'
-import axios from 'axios';
+import React, { useState, useEffect } from 'react'
 import './navbar.css'
 import logo from '../../assets/images/logo.png'
 import { FiMapPin, FiSearch } from "react-icons/fi";
 
 
-export const Navbar = ({ setCity, setCurrentCoord, setIsBtnClicked}) => {
+export const Navbar = ({ setCity, setCurrentCoord, setIsBtnClicked }) => {
+
+    const themes = ["theme-one", "theme-two"];
+
+    const [currentTheme, setCurrentTheme] = useState("theme-one");
+
+    // Randomly select a theme
+    const getRandomTheme = () => {
+        const randomIndex = Math.floor(Math.random() * themes.length);
+        return themes[randomIndex]
+    }
+
+    useEffect(()=>{
+        const selectedTheme = getRandomTheme();
+        setCurrentTheme(selectedTheme);
+        document.body.className = "";
+        document.body.classList.add(selectedTheme)
+
+    }, [])
+
 
     const searchCity = (e) => {
         if (e.key == "Enter") {
@@ -13,6 +31,7 @@ export const Navbar = ({ setCity, setCurrentCoord, setIsBtnClicked}) => {
         }
     }
 
+    // Get current location
     const currentLocation = () => {
         const options = {
             enableHighAccuracy: true,
@@ -29,12 +48,12 @@ export const Navbar = ({ setCity, setCurrentCoord, setIsBtnClicked}) => {
             console.log(`More or less ${crd.accuracy} meters.`);
 
             setCurrentCoord({
-                lat : crd.latitude,
-                lon : crd.longitude,
+                lat: crd.latitude,
+                lon: crd.longitude,
             })
 
             setIsBtnClicked(true);
-            
+
         }
 
         function error(err) {

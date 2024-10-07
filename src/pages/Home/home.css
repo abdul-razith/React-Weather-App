@@ -4,13 +4,11 @@
     padding: 10px 20px 10px 20px;
     display: flex;
     justify-content: space-between;
-    background-color: #313131; /* THEME 2 */
-    background-color: #2A2438; /* THEME 1 */
+    background-color: var(--background);
 }
 
 aside{
     width: 22%;
-    /* row-gap: 20px; */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
