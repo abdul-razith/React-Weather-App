@@ -12,7 +12,7 @@ nav {
 }
 
 .title img {
-    width: 200px;
+    width: 100%;
 }
 
 .search-bar {
@@ -65,8 +65,8 @@ nav {
 
 /* Medium screens / Laptops and small desktops (992px - 1199px) */
 @media (min-width: 992px) and (max-width: 1199px) {
-    .title img {
-        width: 180px;
+    .title{
+        width: 25%;
     }
     
     .search-bar {
@@ -94,8 +94,8 @@ nav {
 
 /* Tablets / Small laptops (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
-    .title img {
-        width: 160px;
+    .title{
+        width: 40%;
     }
     
     .search-bar {
@@ -106,6 +106,10 @@ nav {
         width: fit-content;
     }
     
+    .search-bar .icon-search{
+        display: none;
+    }
+
     .search-bar input::placeholder{
         font-size: 12px;
     }
@@ -123,8 +127,8 @@ nav {
 
 /* Mobile devices (Portrait) / Phones (576px - 767px) */
 @media (min-width: 576px) and (max-width: 767px) {
-    .title img {
-        width: 130px;
+    .title{
+        width: 50%;
     }
     
     .search-bar {
@@ -156,8 +160,8 @@ nav {
 
 /* Extra small devices / Phones (Below 576px) */
 @media (max-width: 575px) {
-    .title img {
-        width: 100px;
+    .title{
+        width: 45%;
     }
     
     .search-bar {
