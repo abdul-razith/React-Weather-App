@@ -4,7 +4,7 @@ import logo from '../../assets/images/logo.png'
 import { FiMapPin, FiSearch } from "react-icons/fi";
 
 
-export const Navbar = ({ setCity, setCurrentCoord, setIsBtnClicked }) => {
+export const Navbar = ({ setCity, setCurrentCoord, setIsBtnClicked, setIsLoading }) => {
 
     const themes = ["theme-one", "theme-two"];
 
@@ -27,7 +27,15 @@ export const Navbar = ({ setCity, setCurrentCoord, setIsBtnClicked }) => {
 
     const searchCity = (e) => {
         if (e.key == "Enter") {
-            setCity(e.target.value);
+            if ((e.target.value.trim()) !== ""){
+                setCity(e.target.value);
+                e.target.value = "";
+                //setIsLoading(true)
+            }
+            else{
+                alert("Enter a valid city name")
+                e.target.value = "";
+            }
         }
     }
 
@@ -41,12 +49,10 @@ export const Navbar = ({ setCity, setCurrentCoord, setIsBtnClicked }) => {
 
         function success(pos) {
             const crd = pos.coords;
-
-            console.log("Your current position is:");
+            /* console.log("Your current position is:");
             console.log(`Latitude : ${crd.latitude}`);
             console.log(`Longitude: ${crd.longitude}`);
-            console.log(`More or less ${crd.accuracy} meters.`);
-
+            console.log(`More or less ${crd.accuracy} meters.`); */
             setCurrentCoord({
                 lat: crd.latitude,
                 lon: crd.longitude,
@@ -75,7 +81,7 @@ export const Navbar = ({ setCity, setCurrentCoord, setIsBtnClicked }) => {
                     <FiSearch className='icon-search' />
                     <input type="text" placeholder='Search City....' onKeyDown={(e) => searchCity(e)} />
                 </div>
-                <div className="location-btn" onClick={() => currentLocation()}>
+                <div className="location-btn" onClick={() => currentLocation()} onTouchStart={(e) => searchCity(e)} >
                     <FiMapPin />
                     <button>Current Location</button>
                 </div>

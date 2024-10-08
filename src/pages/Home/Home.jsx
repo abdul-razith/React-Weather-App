@@ -9,15 +9,15 @@ import { Hourforecast } from '../../components/Hourforecast/Hourforecast';
 import { Loader } from '../../components/Loader/Loader';
 import { Footer } from '../../components/Footer/Footer';
 import { Error } from '../../components/Error/Error';
-import { useNavigate } from 'react-router';
 
 export const Home = () => {
   
   var url, forecast_url, air_url;
 
-  const [errorSts, setErrorSts] = useState(null);
+  const [errorSts, setErrorSts] = useState();
   const [isBtnClicked, setIsBtnClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [dataLoaded, setDataLoaded] = useState(false);
 
   const [city, setCity] = useState("chennai");
   const [currentCoord, setCurrentCoord] = useState({ lat : 0, lon : 0}); // Get the current coord from the API, after clicking the "current location button" (current weather)
@@ -32,7 +32,6 @@ export const Home = () => {
 
   if(isBtnClicked){
     url = `https://api.openweathermap.org/data/2.5/weather?lat=${currentCoord.lat}&lon=${currentCoord.lon}&appid=${api_key}&units=Metric`;
-    /* forecast_url = `https://api.openweathermap.org/data/2.5/forecast?q=${currentData.name}&appid=${api_key}&units=Metric`; */
     forecast_url = `https://api.openweathermap.org/data/2.5/forecast?lat=${currentCoord.lat}&lon=${currentCoord.lon}&appid=${api_key}&units=Metric`;
     air_url = `https://api.openweathermap.org/data/2.5/air_pollution?lat=${currentCoord.lat}&lon=${currentCoord.lon}&appid=${api_key}`;
   }
@@ -48,6 +47,7 @@ export const Home = () => {
     // Function to fetch all APIs
     const fetchData = async () => {
       try {
+        setDataLoaded(true);
         // First function for current API
         const current_resp = await axios.get(url);
         setCurrentData(current_resp.data);
@@ -66,21 +66,40 @@ export const Home = () => {
 
         // Once all APIs are fetched, turn off the loading state
         setIsLoading(false);
+        
+        
+        setTimeout(() => {
+          setDataLoaded(false); //dataLoaded state.
+        }, 2000);
+
       } catch (error) {
-        setErrorSts(error.message)
-        console.error("Error fetching data:", error);
-        // Handle errors and optionally set loading to false
+       if(error.code === "ERR_NETWORK"){
+          setErrorSts(error.message)
+       }
+       else{
+          setErrorSts({
+            cod : error.response.data.cod,
+            msg : error.response.data.message
+          })
+       }
+        setIsLoading(false);
+        console.error("Error fetching data:", error.message);
       }
     };
 
     fetchData();
   }, [url, forecast_url, air_url]);
 
+
   if(errorSts){
     return <Error errorSts={errorSts}/>
   }
 
   if (isLoading) {
+    return <Loader />
+  }
+
+  if(dataLoaded){
     return <Loader />
   }
 
@@ -96,7 +115,7 @@ export const Home = () => {
 
   return (
     <>
-      <Navbar setCity={setCity} setIsBtnClicked={setIsBtnClicked} setCurrentCoord={setCurrentCoord} />
+      <Navbar setCity={setCity} setIsBtnClicked={setIsBtnClicked} setCurrentCoord={setCurrentCoord} setIsLoading={setIsLoading} />
       <div className="container">
         <aside>
           <>

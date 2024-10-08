@@ -17,18 +17,17 @@ import n13 from '../assets/images/weather_icons/partly-cloudy-day-snow.svg';
 import d50 from '../assets/images/weather_icons/mist.svg';
 import n50 from '../assets/images/weather_icons/mist.svg';
 
-import wind from '../assets/images/weather_icons/wind.svg'
-import sunrise from '../assets/images/weather_icons/sunrise.svg'
-import sunset from '../assets/images/weather_icons/sunset.svg'
-import humidity from '../assets/images/weather_icons/humidity.svg'
-import thermometer_celsius from '../assets/images/weather_icons/thermometer-celsius.svg'
-import pressure_high from '../assets/images/weather_icons/pressure-high.svg'
-import pressure_low from '../assets/images/weather_icons/pressure-low.svg'
+import wind from '../assets/images/other_icons/wind.svg'
+import sunrise from '../assets/images/other_icons/sunrise.svg'
+import sunset from '../assets/images/other_icons/sunset.svg'
+import humidity from '../assets/images/other_icons/humidity.svg'
+import thermometer_celsius from '../assets/images/other_icons/thermometer-celsius.svg'
+import pressure_high from '../assets/images/other_icons/pressure-high.svg'
+import pressure_low from '../assets/images/other_icons/pressure-low.svg'
+import sight from '../assets/images/other_icons/sight.svg'
+import umbrella_wind_alt from '../assets/images/other_icons/umbrella-wind-alt.svg'
 
-import umbrella_wind_alt from '../assets/images/others/umbrella-wind-alt.svg'
-
-
-export const weather_icons = {
+export const other_icons = {
     "wind_icon" : wind,
     "sunrise_icon" : sunrise,
     "sunset_icon" : sunset,
@@ -37,8 +36,10 @@ export const weather_icons = {
     "pressure_high_icon" : pressure_high,
     "pressure_low_icon" : pressure_low,
     "erro_icon" : umbrella_wind_alt,
-    
+    "eye" : sight,
+}
 
+export const weather_icons = {
     "01d" : d01,
     "01n" : n01,
     "02d" : d02,

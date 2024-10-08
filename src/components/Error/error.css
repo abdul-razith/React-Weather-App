@@ -6,17 +6,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    row-gap: 20px;
+}
+
+.error .msg p{
+    font-family: var(--font-heading);
+    font-size: 52px;
+    color: black;
+}
+
+.error .msg{
+    text-align: center;
+    width: fit-content;
 }
 
 .error img{
-    height: 60%;
-}
-.error h1{
-    letter-spacing: 10px;
-    text-align: center;
-    height: 25%;
-    width: 370px;
-    color: black;
-    font-size: 72px;
-    font-family: var(--font-heading);
+    width: 25%;
 }
