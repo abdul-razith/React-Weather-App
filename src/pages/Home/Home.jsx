@@ -8,11 +8,14 @@ import { Dayforecast } from '../../components/Dayforecast/Dayforecast'
 import { Hourforecast } from '../../components/Hourforecast/Hourforecast';
 import { Loader } from '../../components/Loader/Loader';
 import { Footer } from '../../components/Footer/Footer';
+import { Error } from '../../components/Error/Error';
+import { useNavigate } from 'react-router';
 
 export const Home = () => {
   
   var url, forecast_url, air_url;
 
+  const [errorSts, setErrorSts] = useState(null);
   const [isBtnClicked, setIsBtnClicked] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -64,6 +67,7 @@ export const Home = () => {
         // Once all APIs are fetched, turn off the loading state
         setIsLoading(false);
       } catch (error) {
+        setErrorSts(error.message)
         console.error("Error fetching data:", error);
         // Handle errors and optionally set loading to false
       }
@@ -72,10 +76,14 @@ export const Home = () => {
     fetchData();
   }, [url, forecast_url, air_url]);
 
+  if(errorSts){
+    return <Error errorSts={errorSts}/>
+  }
 
   if (isLoading) {
     return <Loader />
   }
+
 
   const highlightsProps = {
     sunrise: currentData.sys.sunrise,

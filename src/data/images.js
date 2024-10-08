@@ -25,6 +25,8 @@ import thermometer_celsius from '../assets/images/weather_icons/thermometer-cels
 import pressure_high from '../assets/images/weather_icons/pressure-high.svg'
 import pressure_low from '../assets/images/weather_icons/pressure-low.svg'
 
+import umbrella_wind_alt from '../assets/images/others/umbrella-wind-alt.svg'
+
 
 export const weather_icons = {
     "wind_icon" : wind,
@@ -34,6 +36,7 @@ export const weather_icons = {
     "thermometer_celsius_icon" : thermometer_celsius,
     "pressure_high_icon" : pressure_high,
     "pressure_low_icon" : pressure_low,
+    "erro_icon" : umbrella_wind_alt,
     
 
     "01d" : d01,
