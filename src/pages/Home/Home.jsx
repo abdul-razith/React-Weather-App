@@ -103,8 +103,10 @@ export const Home = () => {
     return <Loader />
   }
 
+  console.log(currentData.timezone)
 
   const highlightsProps = {
+    timezone: currentData.timezone,
     sunrise: currentData.sys.sunrise,
     sunset: currentData.sys.sunset,
     humidity: currentData.main.humidity,
@@ -121,7 +123,6 @@ export const Home = () => {
           <>
             <Current currentData={currentData} />
           </>
-
           <>
             <Dayforecast forecastData={forecastData} />
           </>

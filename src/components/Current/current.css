@@ -9,8 +9,15 @@
     justify-content: space-around;
 }
 
-.current h3 {
+.current .current-title {
     font-family: var(--font-heading);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.current .current-title p{
+    font-size: 19px;
 }
 
 .current .unit {
