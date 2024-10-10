@@ -1,5 +1,5 @@
 
-# 🌦️ VibeSky
+# 🌤️ VibeSky: A Weather Application ☁️
 
 A responsive single-page weather app built with React.js, utilizing the OpenWeatherMap API and other web technologies. This app allows users to search for current weather conditions, view 5-day and next 24 hours forecasts, and check air quality in cities worldwide.
 
