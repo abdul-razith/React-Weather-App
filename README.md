@@ -32,7 +32,7 @@ You can check out the live demo of the project here:
 
 ## Screenshots
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Weather App Screenshot](https://github.com/user-attachments/assets/b0a72b58-3518-4c2b-a4c9-385445e74748)
 
 
 ## 🛠️ Tech Stack
